@@ -1,12 +1,14 @@
 import React from "react";
 
-function CategoryFilter({categories}) {
+function CategoryFilter({categories,settingCategory}) {
    function toggleSelection(e){
     const buttons =Array.from(document.querySelectorAll(".buttons"))
     buttons.forEach(button=>{
       button.classList.remove("selected");
    });
    e.target.classList.add("selected");
+   const category = e.target.textContent
+   settingCategory(category)
    }
 
   return (
