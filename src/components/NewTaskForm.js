@@ -6,21 +6,21 @@ function NewTaskForm({categories,onTaskFormSubmit}) {
     e.preventDefault()
     
     onTaskFormSubmit({
-      text: e.target.text.value,
-      category: e.target.category.value
+      text: document.getElementById("text").value,
+      category: document.getElementById("category").value,
     })
     // how to reset values being input in the form
-    e.target.reset()
+    // e.target.reset()
   }
   return (
     <form className="new-task-form" onSubmit={handleSubmit}>
       <label>
         Details
-        <input type="text" name="text" required/>
+        <input id="text"type="text" name="text" required/>
       </label>
       <label>
         Category
-        <select name="category">
+        <select id="category"name="category">
           {
           categories.map(category=>{
             if (category==="All"){
